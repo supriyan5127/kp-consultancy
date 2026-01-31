@@ -1,0 +1,532 @@
+:root {
+  --bg: #050505;
+  --card-bg: #0f1117;
+  --neon-blue: #00d2ff;
+  --neon-purple: #9d50bb;
+  --text-gray: #b0b3b8;
+  --border: rgba(255, 255, 255, 0.1);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: white;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 8%;
+  background: rgba(5, 5, 5, 0.95);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid var(--border);
+}
+
+.glow-title span {
+  color: var(--neon-blue);
+  text-shadow: 0 0 10px var(--neon-blue);
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  margin-left: 25px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--neon-blue);
+}
+
+.nav-links .admin-link {
+  background: linear-gradient(45deg, #9d50bb, #00d2ff);
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.nav-links .admin-link:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0, 210, 255, 0.3);
+}
+
+.hero-section {
+  text-align: center;
+  padding: 100px 10%;
+  background: radial-gradient(circle at top, #0a1a2a, transparent);
+}
+
+.hero-title {
+  font-size: 4rem;
+  margin: 0;
+}
+
+.hero-title span {
+  background: linear-gradient(to right, var(--neon-blue), var(--neon-purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.stats-container {
+  display: flex;
+  justify-content: space-around;
+  background: var(--card-bg);
+  padding: 40px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  margin-top: 50px;
+}
+
+.section {
+  padding: 80px 8%;
+  text-align: center;
+}
+
+.section-heading span {
+  color: var(--neon-blue);
+  text-shadow: 0 0 10px var(--neon-blue);
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.cyber-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  overflow: hidden;
+  transition: 0.4s;
+}
+
+.cyber-card:hover {
+  border-color: var(--neon-blue);
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0, 210, 255, 0.2);
+}
+
+.card-img-wrapper {
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+}
+
+.card-img-wrapper::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--neon-blue);
+  box-shadow: 0 0 10px var(--neon-blue);
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.5s;
+}
+
+.cyber-card:hover .card-img {
+  transform: scale(1.1);
+}
+
+.card-content {
+  padding: 25px;
+}
+
+.course-meta {
+  color: var(--neon-blue);
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin: 10px 0;
+  text-shadow: 0 0 10px rgba(0, 210, 255, 0.3);
+}
+
+.secure-btn,
+.apply-btn {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  color: white;
+  background: linear-gradient(45deg, #007cf0, #00dfd8);
+}
+
+.apply-btn {
+  background: linear-gradient(45deg, #6a11cb, #2575fc);
+}
+
+.footer {
+  padding: 60px 8%;
+  background: #000;
+  border-top: 1px solid var(--border);
+}
+
+.footer-flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 992px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- EFFECTIVE CONTACT SECTION --- */
+.contact-section {
+  padding: 80px 8% 40px;
+  background: #000;
+  border-top: 1px solid var(--border);
+}
+
+.contact-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: flex-start;
+}
+
+.contact-brand p {
+  color: var(--text-gray);
+  margin: 20px 0 40px;
+  max-width: 400px;
+}
+
+.direct-contact .contact-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.contact-item .icon {
+  font-size: 1.5rem;
+  color: var(--neon-blue);
+}
+
+/* --- CYBER FORM STYLING --- */
+.contact-form-box {
+  background: var(--card-bg);
+  padding: 40px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+}
+
+.contact-form-box h3 {
+  margin-bottom: 25px;
+  font-size: 1.8rem;
+}
+
+.cyber-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cyber-form input,
+.cyber-form textarea {
+  background: #050505;
+  border: 1px solid #222;
+  padding: 15px;
+  border-radius: 10px;
+  color: white;
+  outline: none;
+  transition: 0.3s;
+}
+
+.cyber-form input:focus,
+.cyber-form textarea:focus {
+  border-color: var(--neon-blue);
+  box-shadow: 0 0 10px rgba(0, 210, 255, 0.2);
+}
+
+.form-submit {
+  background: linear-gradient(45deg, #3a7bd5, var(--neon-blue));
+  color: white;
+  border: none;
+  padding: 15px;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.form-submit:hover {
+  transform: scale(1.02);
+  box-shadow: 0 5px 20px rgba(0, 210, 255, 0.4);
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 60px;
+  padding-top: 30px;
+  border-top: 1px solid #111;
+  color: #444;
+}
+
+/* Responsive Fix */
+@media (max-width: 900px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- ADVANCED LIGHTING & BLINKING --- */
+
+/* 1. Breathing Neon Section Glow */
+.neon-pulse {
+  animation: sectionGlow 4s infinite alternate ease-in-out;
+  border: 1px solid rgba(0, 210, 255, 0.2);
+}
+
+@keyframes sectionGlow {
+  from {
+    box-shadow: 0 0 10px rgba(0, 210, 255, 0.1);
+  }
+
+  to {
+    box-shadow: 0 0 30px rgba(0, 210, 255, 0.3);
+  }
+}
+
+/* 2. Blinking Animations for Phone/Email */
+.blink-blue {
+  animation: blinkBlue 2s infinite;
+}
+
+.blink-green {
+  animation: blinkGreen 2.5s infinite;
+}
+
+@keyframes blinkBlue {
+
+  0%,
+  100% {
+    color: #fff;
+    text-shadow: none;
+  }
+
+  50% {
+    color: #00d2ff;
+    text-shadow: 0 0 15px #00d2ff, 0 0 25px #00d2ff;
+  }
+}
+
+@keyframes blinkGreen {
+
+  0%,
+  100% {
+    color: #fff;
+    text-shadow: none;
+  }
+
+  50% {
+    color: #00ff9d;
+    text-shadow: 0 0 15px #00ff9d, 0 0 25px #00ff9d;
+  }
+}
+
+/* 3. Form Button Glow Animation */
+.form-submit-glow {
+  position: relative;
+  background: linear-gradient(90deg, #00d2ff, #9d50bb, #00d2ff);
+  background-size: 200%;
+  color: white;
+  border: none;
+  padding: 15px;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  animation: gradientFlow 3s linear infinite;
+}
+
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+/* Form Input Focus Glow */
+.cyber-form input:focus,
+.cyber-form textarea:focus {
+  border-color: #00d2ff;
+  box-shadow: 0 0 15px rgba(0, 210, 255, 0.5);
+  transform: scale(1.01);
+}
+
+.contact-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  padding: 50px;
+  background: #0f1117;
+  border-radius: 30px;
+}
+
+.footer-copyright {
+  text-align: center;
+  margin-top: 40px;
+  color: #444;
+  font-size: 12px;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  backdrop-filter: blur(5px);
+}
+
+.modal-content {
+  background: #0f1117;
+  padding: 40px;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 450px;
+  position: relative;
+  border: 1px solid var(--neon-blue);
+  box-shadow: 0 0 30px rgba(0, 210, 255, 0.2);
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.modal-content h2 {
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+/* Blinking Submit Button */
+.form-submit-glow {
+  background: linear-gradient(45deg, #00d2ff, #9d50bb);
+  animation: buttonBlink 2s infinite;
+  border: none;
+  color: white;
+  font-weight: bold;
+}
+
+@keyframes buttonBlink {
+
+  0%,
+  100% {
+    box-shadow: 0 0 5px #00d2ff;
+    transform: scale(1);
+  }
+
+  50% {
+    box-shadow: 0 0 20px #9d50bb;
+    transform: scale(1.05);
+  }
+}
+
+/* Modal Inner Lighting */
+.modal-content {
+  border: 2px solid #00d2ff;
+  box-shadow: inset 0 0 15px rgba(0, 210, 255, 0.2), 0 0 30px rgba(0, 0, 0, 0.5);
+}
+
+/* --- GLOBAL ANIMATIONS --- */
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.floating {
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes glow-pulse {
+  0% {
+    box-shadow: 0 0 5px rgba(0, 210, 255, 0.2);
+  }
+
+  50% {
+    box-shadow: 0 0 20px rgba(0, 210, 255, 0.6), 0 0 10px rgba(157, 80, 187, 0.4);
+  }
+
+  100% {
+    box-shadow: 0 0 5px rgba(0, 210, 255, 0.2);
+  }
+}
+
+.glow-card {
+  animation: glow-pulse 3s infinite alternate;
+}
+
+/* Applying animations to existing elements */
+.cyber-card {
+  animation: float 6s ease-in-out infinite;
+  /* Make cards float */
+}
+
+/* Make key elements blink/glow as requested */
+.hero-title span {
+  animation: text-flicker 3s infinite alternate;
+}
+
+@keyframes text-flicker {
+
+  0%,
+  100% {
+    opacity: 1;
+    text-shadow: 0 0 10px var(--neon-blue);
+  }
+
+  50% {
+    opacity: 0.8;
+    text-shadow: 0 0 20px var(--neon-purple);
+  }
+}
