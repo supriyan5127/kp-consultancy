@@ -47,17 +47,6 @@ body {
   color: var(--neon-blue);
 }
 
-.nav-links .admin-link {
-  background: linear-gradient(45deg, #9d50bb, #00d2ff);
-  padding: 8px 16px;
-  border-radius: 8px;
-  font-size: 0.9rem;
-}
-
-.nav-links .admin-link:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 15px rgba(0, 210, 255, 0.3);
-}
 
 .hero-section {
   text-align: center;
