@@ -23,16 +23,35 @@ function SecureSpotModal({ course, onClose }) {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
+
+    // Phone validation: Allow only numbers and max 10 digits
+    if (name === 'phone') {
+      const numericValue = value.replace(/\D/g, ''); // Remove non-numeric chars
+      if (numericValue.length <= 10) {
+        setFormData(prev => ({
+          ...prev,
+          [name]: numericValue
+        }));
+      }
+    } else {
+      setFormData(prev => ({
+        ...prev,
+        [name]: value
+      }));
+    }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
     setLoading(true);
+
+    // Phone validation before submit
+    if (formData.phone.length !== 10) {
+      setError('Phone number must be exactly 10 digits.');
+      setLoading(false);
+      return;
+    }
 
     try {
       // Validate course object
